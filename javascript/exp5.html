@@ -1,0 +1,16 @@
+<script>
+    // ES5
+    const arr = ['h', 'e', 'l', 'l', 'o'];
+let arrIterator = arr[Symbol.iterator]();
+console.log(arrIterator.next().value); // {value: "h", done: false}
+console.log(arrIterator.next().value); // {value: "e", done: false}
+
+
+// ES6
+   //check iterable using for..of
+   for(let m of marks){
+      console.log(m);
+   }
+
+   
+</script>

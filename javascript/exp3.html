@@ -1,0 +1,20 @@
+<!-- write program for promise using if condition  -->
+<script>
+    let p =5
+   let pro=new Promise(function(resolve,reject ){
+   if(p>50)
+   {
+       resolve("Accept because it true")
+   }
+   else{
+       reject("reject because it false")
+   }
+});
+
+//    console.log(pro)
+pro.then(function res(result){
+console.log(result)
+}).catch(function rej(reject){
+   console.log(reject)
+} )
+</script>

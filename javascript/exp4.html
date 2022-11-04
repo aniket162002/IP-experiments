@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="button">submit</button>
+<div id="head"></div>
+    
+    <script>
+                   document.getElementById("button").addEventListener("click",getData);
+
+           function getData(){
+            console.log("pending...");
+            // document.write("pending....")
+           setTimeout(()=>{
+            urls ="https://jsonplaceholder.typicode.com/users"
+        fetch (urls).then((res)=>{
+            return res.json();
+        }).then((datas)=>{
+            console.log(datas);
+            // document.write(data)
+            for(let  i in datas){
+                document.getElementById("head").innerHTML+=`${datas.[i]}`;
+            }
+        })
+           },2000);
+           }
+
+
+       //ES5 javascript rendering code 
+// const h1 =document.createElement("h1")
+// h1.innerHTML("h1 tag is herer");
+// document.getElementById("root").appendChild("h1")
+    </script>
+</body>
+</html>
