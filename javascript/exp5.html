@@ -1,16 +1,37 @@
 <script>
-    // ES5
-    const arr = ['h', 'e', 'l', 'l', 'o'];
-let arrIterator = arr[Symbol.iterator]();
-console.log(arrIterator.next().value); // {value: "h", done: false}
-console.log(arrIterator.next().value); // {value: "e", done: false}
+   const arr = [10, 20, 30, 40, 50];
+   // ES5
+   function NumberIterator(arr) {
+      var nextNum = 0;
+      return {
+         next() {
+            if (nextNum < arr.length) {
+               return {
+                  value: arr[nextNum++],
+                  done: false
+               }
+            } else {
+               return {
+                  done: true
+               }
+            }
 
-
-// ES6
-   //check iterable using for..of
-   for(let m of marks){
-      console.log(m);
+         }
+      }
    }
 
-   
+let num = NumberIterator(arr)
+console.log(num.next().value)
+console.log(num.next().value)
+console.log(num.next().value)
+console.log(num.next().value)
+
+    // ES6
+// let arrIterator = arr[Symbol.iterator]();
+// console.log(arrIterator.next().value); // {value: "h", done: false}
+// console.log(arrIterator.next().value); // {value: "e", done: false}
+
+
+
+
 </script>
